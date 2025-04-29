@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahith Reddy Akkati - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .navbar a {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #00ff88;
+        }
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #00ff88;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .navbar a:hover::after {
+            transform: translateX(0);
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1516321310764-898d997b6b78?auto=format&fit=crop&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .profile-img {
+            border: 4px solid #00ff88;
+            transition: transform 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar fixed top-0 w-full z-50 py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-2xl font-bold">Sahith Reddy</h1>
+            <div class="space-x-6">
+                <a href="#home" class="text-lg">Home</a>
+                <a href="#about" class="text-lg">About</a>
+                <a href="#skills" class="text-lg">Skills</a>
+                <a href="#projects" class="text-lg">Projects</a>
+                <a href="#certifications" class="text-lg">Certifications</a>
+                <a href="#resume" class="text-lg">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="text-5xl font-bold mb-4 animate-pulse">Welcome to My Portfolio</h1>
+            <p class="text-xl mb-6">Hi, I'm Sahith Reddy Akkati, a passionate B.Tech CSE student specializing in Cyber Security and Full Stack Development.</p>
+            <a href="#about" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full transition duration-300">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <img src="profile.jpg" alt="Sahith Reddy Profile" class="w-64 h-64 rounded-full mb-6 md:mb-0 md:mr-10 profile-img">
+                <div>
+                    <p class="text-lg mb-4">Hi, I’m Sahith Reddy Akkati, a B.Tech Computer Science student at Lovely Professional University, specializing in Cyber Security and Full Stack development. I focus on building scalable applications and have a solid foundation in both front-end and back-end development.</p>
+                    <p class="text-lg mb-4">📞 Contact: +91 8919721352</p>
+                    <p class="text-lg mb-4">📧 Email: sahithreddyakkati@gmail.com</p>
+                    <p class="text-lg mb-4">🔗 <a href="https://linkedin.com/in/akkati-sahithreddy18" class="text-green-400 hover:underline">LinkedIn</a></p>
+                    <p class="text-lg">🔗 <a href="https://github.com/Sahithreddy18" class="text-green-400 hover:underline">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900 section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Programming Languages</h3>
+                    <p>Python <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" class="inline-block w-6 h-6"></p>
+                    <p>Java <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Logo" class="inline-block w-6 h-6"></p>
+                    <p>C++ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ Logo" class="inline-block w-6 h-6"></p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Frontend Development</h3>
+                    <p>HTML5 (Advanced) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" class="inline-block w-6 h-6"></p>
+                    <p>CSS3 (Advanced) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo" class="inline-block w-6 h-6"></p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Backend & Databases</h3>
+                    <p>Node.js <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js Logo" class="inline-block w-6 h-6"></p>
+                    <p>MySQL (Intermediate) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Logo" class="inline-block w-6 h-6"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDU6hOtThP4Ygm237_dOqi3qV-1F0u5GiSMQ&s" alt="Amazon Clone Screenshot" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">Amazon Clone</h3>
+                    <p>Designed and developed an advanced Amazon clone with a pixel-perfect UI. Features include hover effects, smooth animations, product listings, and shopping cart functionality.</p>
+                    <p class="mt-2"><strong>Tech:</strong> HTML, CSS</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd0In4pQLh6KTVunaqmvCvwZs5dlGX0BWfxQ&s" alt="Library Management System Screenshot" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">Library Management System</h3>
+                    <p>Developed a system to manage book records, borrowings, and returns. Features robust back-end with Python and SQL, and a user-friendly interface.</p>
+                    <p class="mt-2"><strong>Tech:</strong> Python, MySQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-900 section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Certifications & Courses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <img src="programming_in_cpp.png" alt="Coursera Logo" class="w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">Programming in C++</h3>
+                    <p>Coursera</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="cipher_schools.png" alt="Cipher Schools Logo" class="w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">C++ and Data Structures</h3>
+                    <p>Cipher Schools</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="cybrary.png" alt="Cybrary Logo" class="w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold">CompTIA Linux+ XKO-005</h3>
+                    <p>Cybrary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 section">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12">Resume</h2>
+            <p class="text-lg mb-6">Download my resume to learn more about my skills and experiences.</p>
+            <a href="https://drive.google.com/file/d/1p6bXTfE5hkgPefOr1pNiIGvqniKKfSDd/view?usp=sharing" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full transition duration-300">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-center">
+        <p>© 2025 Sahith Reddy Akkati. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
